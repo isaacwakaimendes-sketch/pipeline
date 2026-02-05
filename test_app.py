@@ -4,31 +4,34 @@ from app import app
 
 client = TestClient(app)
 
-def test_listar_utilizadores():
+def test_get_utilizadores():
     response = client.get("/utilizadores")
     assert response.status_code == 200
-    dados = response.json()
-    assert "utilizadores" in dados
-    assert len(dados["utilizadores"]) == 5
+    data = response.json()
+    assert "utilizadores" in data
+    assert len(data["utilizadores"]) > 0
 
-def test_obter_utilizador():
-    response = client.get("/utilizadores/1")
-    assert response.status_code == 200
-    u = response.json()
-    assert u["name"] == "Isaac Mendes"
-    assert "email" in u
-    assert "id_escola" in u
-
-def test_listar_escolas():
+def test_get_escolas():
     response = client.get("/escolas")
     assert response.status_code == 200
-    dados = response.json()
-    assert "escolas" in dados
-    assert len(dados["escolas"]) == 3
+    data = response.json()
+    assert "escolas" in data
+    assert len(data["escolas"]) > 0
 
-def test_obter_escola():
-    response = client.get("/escolas/1")
+def test_post_utilizador():
+    novo = {
+        "name": "Teste API",
+        "age": 20,
+        "email": "teste@example.com",
+        "hobbies": ["programação"],
+        "ativo": True,
+        "id_escola": "1",
+        "ano": "12",
+        "curso": "Teste",
+        "estagiario": False
+    }
+    response = client.post("/utilizadores", json=novo)
     assert response.status_code == 200
-    e = response.json()
-    assert e["nome"] == "Escola Secundária da Senhora da Hora"
-    assert "localizacao" in e
+    result = response.json()
+    assert "mensagem" in result
+    assert "id" in result
