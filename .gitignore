@@ -1,12 +1,9 @@
-# Python
 __pycache__/
 *.pyc
 *.pyo
 *.pyd
 *.log
 
-# Virtual environment
 .venv/
 
-# VS Code
 .vscode/
