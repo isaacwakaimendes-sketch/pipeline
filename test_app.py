@@ -1,17 +1,10 @@
-import pytest
-import sqlite3
-from app import criar_tabela, adicionar_usuario, buscar_usuario
+from app import procurar_utilizador_por_nome
 
-@pytest.fixture
-def db_conn():
-    """Cria uma conexão SQLite em memória antes de cada teste e fecha depois"""
-    conn = sqlite3.connect("basededados.db")  
-    criar_tabela(conn)
-    yield conn
-    conn.close()
+def test_procurar_utilizador_existente():
+    utilizador = procurar_utilizador_por_nome("Isaac Mendes")
+    assert utilizador is not None
+    assert utilizador["name"] == "Isaac Mendes"
 
-def test_adicionar_e_buscar_usuario(db_conn):
-    adicionar_usuario(db_conn, "Isaac")
-    usuario = buscar_usuario(db_conn, "Isaac")
-    assert usuario is not None
-    assert usuario[1] == "Isaac"
+def test_procurar_utilizador_inexistente():
+    utilizador = procurar_utilizador_por_nome("Nome Que Não Existe")
+    assert utilizador is None

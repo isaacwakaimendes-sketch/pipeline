@@ -4,32 +4,32 @@
   "itemListElement": [
     {
       "@type": "Person",
-      "@id": "utilizador/1",
+      "@id": "1",
       "name": "Isaac Mendes"
     },
     {
       "@type": "Person",
-      "@id": "utilizador/2",
+      "@id": "2",
       "name": "Victor Carneiro"
     },
     {
       "@type": "Person",
-      "@id": "utilizador/3",
+      "@id": "3",
       "name": "Tiago Martins"
     },
     {
       "@type": "Person",
-      "@id": "utilizador/4",
+      "@id": "4",
       "name": "Caio Brito"
     },
     {
       "@type": "Person",
-      "@id": "utilizador/5",
+      "@id": "5",
       "name": "David Lemos"
     },
     {
       "@type": "Person",
-      "@id": "utilizador/6",
+      "@id": "6",
       "name": "Diego Andrade"
     }
   ]

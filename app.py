@@ -1,21 +1,18 @@
-import sqlite3
+import json
+from pathlib import Path
 
-def criar_tabela(conn):
-    """Cria uma tabela de usuários"""
-    conn.execute("""
-        CREATE TABLE IF NOT EXISTS usuarios (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            nome TEXT NOT NULL
-        )
-    """)
-    conn.commit()
+CAMINHO_JSONLD = Path("data/utilizadores.jsonld")
 
-def adicionar_usuario(conn, nome):
-    """Adiciona um usuário"""
-    conn.execute("INSERT INTO usuarios (nome) VALUES (?)", (nome,))
-    conn.commit()
+def carregar_utilizadores():
+    """Carrega utilizadores a partir de um ficheiro JSON-LD"""
+    with open(CAMINHO_JSONLD, encoding="utf-8") as f:
+        dados = json.load(f)
+    return dados["itemListElement"]
 
-def buscar_usuario(conn, nome):
-    """Busca um usuário pelo nome"""
-    cursor = conn.execute("SELECT id, nome FROM usuarios WHERE nome = ?", (nome,))
-    return cursor.fetchone()
+def procurar_utilizador_por_nome(nome):
+    """Procura um utilizador pelo nome"""
+    utilizadores = carregar_utilizadores()
+    for utilizador in utilizadores:
+        if utilizador["name"] == nome:
+            return utilizador
+    return None

@@ -23,17 +23,5 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r pytest.txt
 
-      - name: Criar base de dados
-        run: python criar_base.py
-
       - name: Executar testes
         run: python -m pytest
-
-      - name: Gerar JSON-LD
-        run: python exportar_jsonld.py
-
-      - name: Guardar JSON-LD como artefacto
-        uses: actions/upload-artifact@v4
-        with:
-          name: utilizadores-jsonld
-          path: utilizadores.jsonld
