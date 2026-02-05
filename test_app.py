@@ -1,4 +1,6 @@
-from app import soma
+import pytest
+from app import divide
 
-def test_soma():
-    assert soma(2, 3) == 5
+def test_divide_por_zero():
+    with pytest.raises(ZeroDivisionError):
+        divide(10, 0)
