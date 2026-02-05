@@ -1,5 +1,7 @@
-from app import soma, multiplica
+from app import salvar_texto
 
-def test_soma_multiplica():
-    resultado = multiplica(soma(2, 3), 2)
-    assert resultado == 10
+def test_salvar_texto(tmp_path):
+    arquivo = tmp_path / "teste.txt"
+    salvar_texto("Olá, mundo!", arquivo)
+    conteudo = arquivo.read_text()
+    assert conteudo == "Olá, mundo!"
