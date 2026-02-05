@@ -1,0 +1,61 @@
+{
+    "escolas": [
+    {
+      "id": "1",
+      "nome": "Escola Secundária da Senhora da Hora",
+      "nivel": "Secundário",
+      "localizacao": {
+        "@type": "FeatureCollection",
+        "geometry": {
+          "@type": "Point",
+          "coordinates": [
+            -8.65666, 
+            41.18806
+          ]
+        },
+        "properties": {
+          "cidade": "Senhora da Hora"
+        }
+      },
+      "ativa": true
+    },
+    {
+      "id": "2",
+      "nome": "Escola Secundária Padrão da Légua",
+      "nivel": "Secundário",
+      "localizacao": {
+        "@type": "FeatureCollection",
+        "geometry": {
+          "@type": "Point",
+          "coordinates": [
+            -8.63525, 
+            41.19053
+          ]
+        },
+        "properties": {
+          "cidade": "Custóias"
+        }
+      },
+      "ativa": true
+    },
+    {
+      "id": "3",
+      "nome": "Escola Secundária Abel Salazar",
+      "nivel": "Secundário",
+      "localizacao": {
+        "@type": "FeatureCollection",
+        "geometry": {
+          "@type": "Point",
+          "coordinates": [
+            -8.60611, 
+            41.19652
+          ]
+        },
+        "properties": {
+          "cidade": "São Mamede de Infesta"
+        }
+      },
+      "ativa": false
+    }
+  ]
+}

@@ -1,36 +1,89 @@
 {
-  "@context": "https://schema.org",
-  "@type": "ItemList",
-  "itemListElement": [
+  "utilizadores": [
     {
+      "@context": "https://schema.org",
       "@type": "Person",
-      "@id": "1",
-      "name": "Isaac Mendes"
+      "id": "1",
+      "name": "Isaac Mendes",
+      "age": 16,
+      "email": "isaacwakaimendes@gmail.com",
+      "hobbies": [
+        "futebol",
+        "videojogos",
+        "programação"
+      ],
+      "ativo": true,
+      "id_escola": "1",
+      "ano": "11",
+      "curso": "Programador de Informática",
+      "estagiario": true
     },
     {
+      "@context": "https://schema.org",
       "@type": "Person",
-      "@id": "2",
-      "name": "Victor Carneiro"
+      "id": "2",
+      "name": "Victor Carneiro",
+      "age": 17,
+      "email": "victor.mirandacarneiro17@gmail.com",
+      "hobbies": [
+        "videojogos",
+        "programação"
+      ],
+      "ativo": true,
+      "id_escola": "1",
+      "ano": "11",
+      "curso": "Programador de Informática",
+      "estagiario": true
     },
     {
+      "@context": "https://schema.org",
       "@type": "Person",
-      "@id": "3",
-      "name": "Tiago Martins"
+      "id": "2",
+      "name": "Tiago Martins",
+      "age": 18,
+      "email": "",
+      "hobbies": [
+        "videojogos"
+      ],
+      "ativo": false,
+      "id_escola": "2",
+      "ano": "12",
+      "curso": "Técnico de Multimedia",
+      "estagiario": false
     },
     {
+      "@context": "https://schema.org",
       "@type": "Person",
-      "@id": "4",
-      "name": "Caio Brito"
+      "id": "4",
+      "name": "David Lemos",
+      "age": 15,
+      "email": "davidlemos159@gmail.com",
+      "hobbies": [
+        "futebol",
+        "videojogos"
+      ],
+      "ativo": true,
+      "id_escola": "2",
+      "ano": "10",
+      "curso": "Desporto",
+      "estagiario": false
     },
     {
+      "@context": "https://schema.org",
       "@type": "Person",
-      "@id": "5",
-      "name": "David Lemos"
-    },
-    {
-      "@type": "Person",
-      "@id": "6",
-      "name": "Diego Andrade"
+      "id": "5",
+      "name": "Caio Brito",
+      "age": 18,
+      "email": "Caiofreire310@gmail.com",
+      "hobbies": [
+        "videojogos",
+        "programação"
+      ],
+      "ativo": true,
+      "id_escola": "3",
+      "ano": "12",
+      "curso": "Programador de Informática",
+      "estagiario": true
     }
   ]
 }
