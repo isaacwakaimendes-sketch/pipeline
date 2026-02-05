@@ -1,0 +1,11 @@
+# Python bytecode
+__pycache__/
+
+# Virtual environment
+.venv/
+
+# Arquivos de log
+*.log
+
+# Arquivos temporários
+*.pyc

@@ -24,4 +24,4 @@ jobs:
           pip install -r pytest.txt
 
       - name: Executar testes
-        run: python -m pytest
+        run: pytest

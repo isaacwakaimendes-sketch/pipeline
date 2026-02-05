@@ -1,10 +1,25 @@
-from app import procurar_utilizador_por_nome
+from fastapi.testclient import TestClient
+from app import app
 
-def test_procurar_utilizador_existente():
-    utilizador = procurar_utilizador_por_nome("Isaac Mendes")
-    assert utilizador is not None
-    assert utilizador["name"] == "Isaac Mendes"
+client = TestClient(app)
 
-def test_procurar_utilizador_inexistente():
-    utilizador = procurar_utilizador_por_nome("Nome Que Não Existe")
-    assert utilizador is None
+
+def test_listar_utilizadores():
+    response = client.get("/utilizadores")
+    assert response.status_code == 200
+
+    dados = response.json()
+    assert "@context" in dados
+    assert "itemListElement" in dados
+    assert len(dados["itemListElement"]) == 6
+
+
+def test_obter_utilizador_existente():
+    response = client.get("/utilizadores/1")
+    assert response.status_code == 200
+    assert response.json()["name"] == "Isaac Mendes"
+
+
+def test_obter_utilizador_inexistente():
+    response = client.get("/utilizadores/999")
+    assert response.status_code == 404
