@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mapa de Escolas</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+</head>
+<body>
+  <div id="map" style="height: 500px;"></div>
+
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script>
+    const map = L.map('map').setView([41.19, -8.64], 13);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: 'Map data © OpenStreetMap contributors'
+    }).addTo(map);
+
+    const escolas = [
+      {nome: "Escola Secundária da Senhora da Hora", coords: [41.18806, -8.65666]},
+      {nome: "Escola Secundária Padrão da Légua", coords: [41.19053, -8.63525]},
+      {nome: "Escola Secundária Abel Salazar", coords: [41.19652, -8.60611]}
+    ];
+
+    escolas.forEach(e => {
+      L.marker(e.coords).addTo(map)
+       .bindPopup(e.nome);
+    });
+  </script>
+</body>
+</html>
