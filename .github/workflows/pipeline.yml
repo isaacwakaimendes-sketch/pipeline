@@ -1,4 +1,4 @@
-name: Pipeline Python
+name: Pipeline Isaac 
 
 on:
   push:
