@@ -11,7 +11,7 @@ def db_conn():
     conn.close()
 
 def test_adicionar_e_buscar_usuario(db_conn):
-    adicionar_usuario(db_conn, "Alice")
-    usuario = buscar_usuario(db_conn, "Alice")
+    adicionar_usuario(db_conn, "Isaac")
+    usuario = buscar_usuario(db_conn, "Isaac")
     assert usuario is not None
-    assert usuario[1] == "Alice"
+    assert usuario[1] == "Isaac"
