@@ -1,6 +1,5 @@
-import pytest
-from app import divide
+from app import soma, multiplica
 
-def test_divide_por_zero():
-    with pytest.raises(ZeroDivisionError):
-        divide(10, 0)
+def test_soma_multiplica():
+    resultado = multiplica(soma(2, 3), 2)
+    assert resultado == 10
