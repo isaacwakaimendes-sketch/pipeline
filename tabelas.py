@@ -5,6 +5,10 @@ from tabulate import tabulate
 CAMINHO_UTILIZADORES = Path("data/utilizadores.jsonld")
 CAMINHO_ESCOLAS = Path("data/escolas.jsonld")
 
+def truncate(text, max_len=20):
+    text = str(text)
+    return text if len(text) <= max_len else text[:max_len-3] + "..."
+
 def ver_utilizadores():
     with open(CAMINHO_UTILIZADORES, encoding="utf-8") as f:
         dados = json.load(f)
@@ -13,16 +17,16 @@ def ver_utilizadores():
     for u in dados["utilizadores"]:
         tabela.append([
             u.get("id"),
-            u.get("name"),
+            truncate(u.get("name"), 15),
             u.get("age"),
-            u.get("email"),
+            truncate(u.get("email"), 20),
             u.get("id_escola"),
             u.get("ano"),
-            u.get("curso"),
+            truncate(u.get("curso"), 25),
             "Sim" if u.get("estagiario") else "Não"
         ])
     
-    headers = ["ID", "Nome", "Idade", "Email", "Escola ID", "Ano", "Curso", "Estagiário"]
+    headers = ["ID", "Nome", "Idade", "Email", "Escola ID", "Ano", "Curso", "Estágio"]
     print(tabulate(tabela, headers=headers, tablefmt="grid"))
 
 def ver_escolas():
@@ -34,11 +38,11 @@ def ver_escolas():
         coords = e["localizacao"]["geometry"]["coordinates"]
         tabela.append([
             e.get("id"),
-            e.get("nome"),
+            truncate(e.get("nome"), 25),
             e.get("nivel"),
-            e.get("ativa"),
+            "Sim" if e.get("ativa") else "Não",
             coords[1],  
-            coords[0]   
+            coords[0] 
         ])
     
     headers = ["ID", "Nome", "Nível", "Ativa", "Latitude", "Longitude"]

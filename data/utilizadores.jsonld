@@ -84,6 +84,23 @@
       "ano": "12",
       "curso": "Programador de Informática",
       "estagiario": true
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "id": "6",
+      "name": "Diego Andrade",
+      "age": 16,
+      "email": "",
+      "hobbies": [
+        "futebol",
+        "videojogos"
+      ],
+      "ativo": false,
+      "id_escola": "2",
+      "ano": "11",
+      "curso": "Técnico de Multimedia",
+      "estagiario": false
     }
   ]
 }
