@@ -1,5 +1,5 @@
 {
-    "escolas": [
+  "escolas": [
     {
       "id": "1",
       "nome": "Escola Secundária da Senhora da Hora",
@@ -9,7 +9,7 @@
         "geometry": {
           "@type": "Point",
           "coordinates": [
-            -8.65666, 
+            -8.65666,
             41.18806
           ]
         },
@@ -28,7 +28,7 @@
         "geometry": {
           "@type": "Point",
           "coordinates": [
-            -8.63525, 
+            -8.63525,
             41.19053
           ]
         },
@@ -47,7 +47,7 @@
         "geometry": {
           "@type": "Point",
           "coordinates": [
-            -8.60611, 
+            -8.60611,
             41.19652
           ]
         },

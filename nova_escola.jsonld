@@ -1,0 +1,16 @@
+{
+  "id": "4",
+  "nome": "Escola Secundária Nova",
+  "nivel": "Secundário",
+  "localizacao": {
+    "@type": "FeatureCollection",
+    "geometry": {
+      "@type": "Point",
+      "coordinates": [-8.62000, 41.19000]
+    },
+    "properties": {
+      "cidade": "Porto"
+    }
+  },
+  "ativa": false
+}

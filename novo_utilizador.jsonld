@@ -1,0 +1,16 @@
+{
+  "@context": "https://schema.org",
+      "@type": "Person",
+      "id": "7",
+      "name": "Pessoa Teste",
+      "age": 0,
+      "email": "teste@exemplo.pt",
+      "hobbies": [
+        "fazer nada"
+      ],
+      "ativo": false,
+      "id_escola": "0",
+      "ano": "0",
+      "curso": "-",
+      "estagiario": false
+}
