@@ -58,7 +58,7 @@ def ver_escolas():
             e.get("id"),
             truncate(e.get("nome"), 25),
             e.get("nivel"),
-            "S" if e.get("ativa") else "N",
+            "Sim" if e.get("ativa") else "Não",
             coords[1],  
             coords[0]  
         ])
